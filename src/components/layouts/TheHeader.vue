@@ -13,30 +13,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">{{
-                $t("About")
-              }}</a>
+              <a class="nav-link active" aria-current="page" href="#">
+                {{ $t("About") }}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                {{ $t("Projects") }}
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                {{ $t("Publications") }}
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
-                >Projects</a
+                > {{ $t("Courses") }}</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Publications</a
-              >
+              <a class="nav-link active" aria-current="page" href="#">{{ $t("People") }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Courses</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">People</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Links</a>
+              <a class="nav-link active" aria-current="page" href="#">{{ $t("Links") }}</a>
             </li>
           </ul>
           <div class="language-switcher">
