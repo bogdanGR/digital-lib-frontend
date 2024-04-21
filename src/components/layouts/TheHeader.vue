@@ -9,34 +9,37 @@
         >
           <img src="../../assets/uniwa_logo.png" width="110" />
         </a>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <router-link class="nav-link" to="/about">
                 {{ $t("About") }}
-              </a>
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <router-link class="nav-link" to="/projects">
                 {{ $t("Projects") }}
-                </a>
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <router-link class="nav-link" to="/publications">
                 {{ $t("Publications") }}
-              </a>
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                > {{ $t("Courses") }}</a
-              >
+              <router-link class="nav-link" to="/courses">
+                {{ $t("Courses") }}
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">{{ $t("People") }}</a>
+              <router-link class="nav-link" to="/people">
+                {{ $t("People") }}
+              </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">{{ $t("Links") }}</a>
+              <router-link class="nav-link" to="/links">
+                {{ $t("Links") }}
+              </router-link>
             </li>
           </ul>
           <div class="language-switcher">
