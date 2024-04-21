@@ -5,6 +5,7 @@ import PublicationsPage from "@/pages/PublicationsPage.vue";
 import CoursesPage from "@/pages/CoursesPage.vue";
 import PeoplePage from "@/pages/PeoplePage.vue";
 import LinksPage from "@/pages/LinksPage.vue";
+import NotFound from "@/pages/NotFound.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,7 +17,15 @@ const router = createRouter({
         {path: '/courses', component: CoursesPage},
         {path: '/people', component: PeoplePage},
         {path: '/links', component: LinksPage},
-    ]
+        {path: '/:notFound(.*)', component: NotFound} // catch all urls that doesn't exist in app
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
+
+        return { left: 0, top: 0};
+    }
 });
 
 export default router;
