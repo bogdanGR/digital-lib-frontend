@@ -139,9 +139,9 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:active,
-a.router-link-active {
+.nav-link:hover,
+.nav-link:active,
+.nav-link.router-link-active {
   color: white;
   border-color: #f1a80a;
   background-color: #1a037e;
