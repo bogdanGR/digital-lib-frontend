@@ -1,6 +1,6 @@
 <template>
-  <h1 class="mt-2">Projects</h1>
   <div class="container">
+    <h1 class="mt-2 text-start">Projects</h1>
     <h2 class="text-start">European In Progress</h2>
     <projects-component
         v-for="project in projects"

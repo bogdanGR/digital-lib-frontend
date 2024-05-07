@@ -3,14 +3,14 @@
     <h1 class="mt-2">Courses</h1>
 
     <div class="card mb-3">
-      <h2 class="card-title mt-2" style="margin-left: 40px">{{ $t("Undergraduate") }}</h2>
+      <h2 class="card-title mt-2" style="margin-left: 20px">{{ $t("Undergraduate") }}</h2>
       <div class="text-start d-flex flex-column mb-2 pt-0 mt-0 card-body">
         <courses-list :courses="undergraduateCourses"></courses-list>
       </div>
     </div>
 
     <div class="card">
-      <h2 class="card-title mt-2" style="margin-left: 40px">{{ $t("Graduate") }}</h2>
+      <h2 class="card-title mt-2" style="margin-left: 20px">{{ $t("Graduate") }}</h2>
       <div class="text-start d-flex flex-column mb-2 mt-0 pt-0 card-body">
         <courses-list :courses="graduateCourses"></courses-list>
       </div>

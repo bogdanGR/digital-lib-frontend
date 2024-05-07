@@ -2,7 +2,7 @@
   <h1>People</h1>
 
   <div class="container">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-md-6">
         <h3 class="text-start">Researchers</h3>
         <people-list :people="researchers"></people-list>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Publications</h1>
+    <h1 class="text-start mt-2">Publications</h1>
     <publication-filters></publication-filters>
     <publication-card
         :key="publication.id"
