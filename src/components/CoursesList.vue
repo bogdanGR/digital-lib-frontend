@@ -2,7 +2,7 @@
     <ul class=" m-0 p-0 d-flex flex-column align-items-start flex-wrap course-list">
       <li class="m-1 border-1 border-bottom p-0 text-start" aria-current="true" :key="course.id" v-for="course in courses">
         <a :href="course.link" class="course-link" target="_blank">
-          {{  course.title_en }} - {{  course.title_el }}
+          <font-awesome-icon icon="fa-solid fa-coffee" size="xs" />  {{  course.title_en }} - {{  course.title_el }}
         </a>
       </li>
     </ul>

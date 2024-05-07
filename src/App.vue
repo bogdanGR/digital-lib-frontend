@@ -17,6 +17,29 @@ export default {
   components: {
     TheHeader,
     TheFooter,
+  },
+  data() {
+    return {
+      publications: [
+        {
+          id: 1,
+          authors: 'Vernikos, E. Spyrou, I.-A. Kostis, E. Mathe, Ph. Mylonas',
+          title: 'A Deep Regression Approach for Human Activity Recognition Under Partial Occlusion"',
+          description: 'International Journal of Neural Systems, 33 (09), August 2023.',
+        },
+        {
+          id: 2,
+          authors: 'Vernikos, E. Spyrou, I.-A. Kostis, E. Mathe, Ph. Mylonas',
+          title: '2A Deep Regression Approach for Human Activity Recognition Under Partial Occlusion"',
+          description: 'International Journal of Neural Systems, 33 (09), August 2023.',
+        }
+      ]
+    }
+  },
+  provide() {
+    return {
+      publications: this.publications,
+    }
   }
 }
 </script>

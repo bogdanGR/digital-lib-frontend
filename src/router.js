@@ -2,6 +2,7 @@ import { createRouter, createWebHistory} from "vue-router";
 import AboutPage from './pages/AboutPage.vue';
 import ProjectsPage from "@/pages/ProjectsPage.vue";
 import PublicationsPage from "@/pages/PublicationsPage.vue";
+import ViewAbstract from "@/components/publication/ViewAbstract.vue";
 import CoursesPage from "@/pages/CoursesPage.vue";
 import PeoplePage from "@/pages/PeoplePage.vue";
 import LinksPage from "@/pages/LinksPage.vue";
@@ -14,6 +15,7 @@ const router = createRouter({
         {path: '/about', component: AboutPage},
         {path: '/projects', component: ProjectsPage},
         {path: '/publications', component: PublicationsPage},
+        {name: 'view-abstract', path: '/publication/:publicationId', component: ViewAbstract, props: true},
         {path: '/courses', component: CoursesPage},
         {path: '/people', component: PeoplePage},
         {path: '/links', component: LinksPage},
