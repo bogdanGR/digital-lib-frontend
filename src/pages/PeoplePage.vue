@@ -17,6 +17,7 @@
 
 <script>
 import PeopleList from "@/components/PeopleList.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -24,22 +25,8 @@ export default {
   },
   data() {
     return {
-      researchers: [
-        {
-          id: 1,
-          first_name: 'Geroge',
-          last_name: 'Meletiou',
-          link: '#',
-          title: 'Senior researcher, ICCS-NTUA'
-        },
-        {
-          id: 2,
-          first_name: 'Foivos',
-          last_name: 'Mulwnas',
-          link: '#',
-          title: 'Senior researcher, ICCS-NTUA'
-        }
-      ],
+      apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
+      researchers: [],
       graduateStudents: [
         {
           id: 1,
@@ -57,6 +44,20 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    fetchData() {
+      axios.get(`${this.apiBaseUrl}/people`)
+          .then(response => {
+            this.researchers = response.data['data'];
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    }
+  },
+  mounted() {
+    this.fetchData();
   }
 }
 </script>
