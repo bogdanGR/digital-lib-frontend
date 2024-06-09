@@ -8,6 +8,7 @@
         :authors="publication.authors"
         :title="publication.title"
         :description="publication.description"
+        :file_url="publication.file"
         :id="publication.id"
     ></publication-card>
   </div>
@@ -16,18 +17,32 @@
 <script>
 import PublicationFilters from "@/components/publication/PublicationFilters.vue";
 import PublicationCard from "@/components/publication/PublicationCard.vue";
+import axios from "axios";
 export default {
   components: {
     PublicationFilters,
     PublicationCard
   },
-  inject: ['publications'],
+  //inject: ['publications'],
   data() {
     return {
+      apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
+      publications: [],
+    }
+  },
+  methods: {
+    fetchData() {
+      axios.get(`${this.apiBaseUrl}/publications`)
+          .then(response => {
+            this.publications = response.data['data'];
+          })
+          .catch(error => {
+            console.error(error);
+          });
     }
   },
   mounted() {
-    console.log(this.publications);
+    this.fetchData();
   }
 
 }
