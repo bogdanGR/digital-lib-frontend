@@ -4,7 +4,7 @@
       <div class="card-body text-start">
         <h1>{{ $t('Links') }}</h1>
         <div class="d-flex">
-          <ul class="text-start list-group">
+          <ul class="text">
             <li class="list-group-item m-0">
               <a href="https://services.uniwa.gr" target="_blank"><i class="fa-solid fa-link" style="color: #1a037e"></i> {{ $t('Services') }}</a>
             </li>

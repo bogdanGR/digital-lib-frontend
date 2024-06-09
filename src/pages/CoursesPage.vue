@@ -21,54 +21,34 @@
 
 <script>
 import CoursesList from "@/components/CoursesList.vue";
+import axios from "axios";
+
 export default {
   components: {
     CoursesList
   },
   data() {
     return {
-      undergraduateCourses: [
-        {
-          id: 1,
-          title_en: 'Signals and Systems ',
-          title_el: 'Σήματα και Συστήματα',
-          link: '#',
-        },
-        {
-          id: 2,
-          title_en: 'Computer Graphics',
-          title_el: 'Γραφική με Υπολογιστές',
-          link: 'google.com',
-        },
-        {
-          id: 3,
-          title_en: 'Neural Networks and Computational Intelligence',
-          title_el: 'Νευρωνικά Δίκτυα και Ευφυή Υπολογιστικά Συστήματα',
-          link: '#',
-        }
-      ],
-      graduateCourses: [
-        {
-          id: 1,
-          title_en: 'Human - Computer Interaction',
-          title_el: 'Επικοινωνία Ανθρώπου - Μηχανής',
-          link: '#',
-        },
-        {
-          id: 2,
-          title_en: 'Computer Graphics',
-          title_el: 'Γραφική με Υπολογιστές',
-          link: 'google.com',
-        },
-        {
-          id: 3,
-          title_en: 'Neural Networks and Computational Intelligence',
-          title_el: 'Νευρωνικά Δίκτυα και Ευφυή Υπολογιστικά Συστήματα',
-          link: '#',
-        }
-      ],
+      apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
+      undergraduateCourses: [],
+      graduateCourses: []
     }
   },
+  methods: {
+    fetchData() {
+      axios.get(`${this.apiBaseUrl}/courses`)
+          .then(response => {
+            this.undergraduateCourses = response.data['data'].filter(course => course.type === 'Undergraduate');
+            this.graduateCourses = response.data['data'].filter(course => course.type === 'Graduate');
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    }
+  },
+  mounted() {
+    this.fetchData();
+  }
 }
 </script>
 
