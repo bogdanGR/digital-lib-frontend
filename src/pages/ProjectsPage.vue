@@ -3,48 +3,98 @@
     <h1 class="mt-2 text-start">Projects</h1>
     <h2 class="text-start">European In Progress</h2>
     <projects-component
-        v-for="project in projects"
+        v-for="project in projects_eu_active"
         :key="project.id"
         :framework="project.framework"
-        :title="project.projectName"
-        :fullProjectName="project.fullProjectName"
+        :title="project.project_name"
+        :fullProjectName="project.full_title"
         :participants="project.participants"
         :budget="project.budget"
         :duration="project.duration"
+        :url="project.project_url"
+        :contract_number="project.contract_number"
+        :description="project.description"
+    ></projects-component>
+    <h2 class="text-start">European Completed</h2>
+    <projects-component
+        v-for="project in projects_eu_completed"
+        :key="project.id"
+        :framework="project.framework"
+        :title="project.project_name"
+        :fullProjectName="project.full_title"
+        :participants="project.participants"
+        :budget="project.budget"
+        :duration="project.duration"
+        :url="project.project_url"
+        :contract_number="project.contract_number"
+        :description="project.description"
+    ></projects-component>
+
+    <h2 class="text-start">Greek In Progress</h2>
+    <projects-component
+        v-for="project in projects_gr_active"
+        :key="project.id"
+        :framework="project.framework"
+        :title="project.project_name"
+        :fullProjectName="project.full_title"
+        :participants="project.participants"
+        :budget="project.budget"
+        :duration="project.duration"
+        :url="project.project_url"
+        :contract_number="project.contract_number"
+        :description="project.description"
+    ></projects-component>
+
+    <h2 class="text-start">Greek Completed</h2>
+    <projects-component
+        v-for="project in projects_gr_completed"
+        :key="project.id"
+        :framework="project.framework"
+        :title="project.project_name"
+        :fullProjectName="project.full_title"
+        :participants="project.participants"
+        :budget="project.budget"
+        :duration="project.duration"
+        :url="project.project_url"
+        :contract_number="project.contract_number"
+        :description="project.description"
     ></projects-component>
   </div>
 </template>
 
 <script>
 import ProjectsComponent from "@/components/ProjectsComponent.vue";
+import axios from "axios";
 export default {
   components: {
     ProjectsComponent
   },
   data() {
     return {
-      projects: [
-        {
-            id: 1,
-            framework: 'Framework	H2020',
-            projectName: 'iRead (731724)',
-            fullProjectName: 'Infrastructure and integrated tools for personalized learning of reading skill',
-            participants: 'NATIONAL TECHNICAL UNIVERSITY OF ATHENS, DOLPHIN COMPUTER ACCESS, FISH IN A BOTTLE, KNOWBLE, GOETEBORGS UNIVERSITET, PANEPISTIMIO IOANNINON',
-            budget: '€ 5547042,50',
-            duration: '2017-2020 (48 months)',
-        },
-        {
-          id: 1,
-          framework: 'Framework erasmus+',
-          projectName: 'eCrisis',
-          fullProjectName: 'Europe in Crisis',
-          participants: 'http://ecrisis.eu/partners',
-          budget: '€ 555569,50',
-          duration: '2016-2018 (36 months)',
-        }
-      ]
+      apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
+      projects_eu_active: [],
+      projects_eu_completed: [],
+      projects_gr_active: [],
+      projects_gr_completed: [],
     }
   },
+  methods: {
+    fetchData() {
+      axios.get(`${this.apiBaseUrl}/projects`)
+          .then(response => {
+            this.projects_eu_active = response.data['data'].filter(project => project.type === 'EU Funding' && project.status === 'In Progress');
+            this.projects_eu_completed = response.data['data'].filter(project => project.type === 'EU Funding' && project.status === 'Completed');
+            this.projects_gr_active = response.data['data'].filter(project => project.type === 'Greek Funding' && project.status === 'In Progress');
+            this.projects_gr_completed = response.data['data'].filter(project => project.type === 'Greek Funding' && project.status === 'Completed');
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    }
+  },
+  mounted() {
+    this.fetchData();
+  }
 }
 </script>
 <style scoped>
