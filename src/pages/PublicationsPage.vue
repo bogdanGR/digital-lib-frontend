@@ -23,7 +23,6 @@ export default {
     PublicationFilters,
     PublicationCard
   },
-  //inject: ['publications'],
   data() {
     return {
       apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
