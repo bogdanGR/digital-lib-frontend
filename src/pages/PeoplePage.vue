@@ -4,12 +4,22 @@
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-6">
-        <h3 class="text-start">Researchers</h3>
-        <people-list :people="researchers"></people-list>
+        <h3 class="text-start">Teachers</h3>
+        <people-list :people="teachers"></people-list>
       </div>
       <div class="col-md-6">
-        <h3 class="text-start">Graduate Students</h3>
-        <people-list :people="graduateStudents"></people-list>
+        <h3 class="text-start">Authors</h3>
+        <people-list :people="authors"></people-list>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <h3 class="text-start">Laboratory Teaching Staff</h3>
+        <people-list :people="labTeachingStaff"></people-list>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-start">Students</h3>
+        <people-list :people="students"></people-list>
       </div>
     </div>
   </div>
@@ -26,30 +36,20 @@ export default {
   data() {
     return {
       apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
-      researchers: [],
-      graduateStudents: [
-        {
-          id: 1,
-          first_name: 'Bogdan',
-          last_name: 'Vaskan',
-          link: '#',
-          title: 'Senior researcher, ICCS-NTUA'
-        },
-        {
-          id: 2,
-          first_name: 'Foivos',
-          last_name: 'Mulwnas',
-          link: '#',
-          title: 'Senior researcher, ICCS-NTUA'
-        }
-      ]
+      teachers: [],
+      authors: [],
+      students: [],
+      labTeachingStaff: [],
     }
   },
   methods: {
     fetchData() {
       axios.get(`${this.apiBaseUrl}/people`)
           .then(response => {
-            this.researchers = response.data['data'];
+            this.teachers = response.data['data'].filter(person => person.type === 'Teacher');
+            this.authors = response.data['data'].filter(person => person.type === 'Author');
+            this.students = response.data['data'].filter(person => person.type === 'Student');
+            this.labTeachingStaff = response.data['data'].filter(person => person.type === 'Laboratory Teaching Staff');
           })
           .catch(error => {
             console.error(error);
