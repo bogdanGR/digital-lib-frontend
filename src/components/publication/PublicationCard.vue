@@ -5,7 +5,11 @@
         <span>{{ authorNames }}</span>
       </p>
       <h4 class="card-title">{{ title }}</h4>
-      <p>{{ description }}</p>
+      <ul class="d-flex justify-content-start publication_list">
+        <li class="ms-0">{{ publisher }}</li>
+        <li class="ms-0">{{ publication_date }}</li>
+        <li class="ms-0">{{ publication_type }}</li>
+      </ul>
     </div>
     <div class="d-flex mb-3">
       <router-link class="btn btn-primary mx-2" :to="abstractLink">Abstract</router-link>
@@ -24,7 +28,7 @@ export default {
       description: this.description,
     }
   },
-  props: ['authors', 'title', 'description', 'id', 'file_url'],
+  props: ['authors', 'title', 'id', 'file_url', 'publisher', 'publication_date', 'publication_type'],
   computed: {
     abstractLink() {
 
@@ -42,5 +46,17 @@ export default {
 </script>
 
 <style scoped>
+.publication_list li {
+  position: relative;
+}
+.publication_list li::after {
+  content: "•";
+  position: absolute;
+  right: -20px;
+  color: black;
+}
 
+.publication_list li:last-child::after {
+  content: "";
+}
 </style>

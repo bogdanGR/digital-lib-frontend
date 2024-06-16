@@ -7,9 +7,11 @@
         v-for="publication in publications"
         :authors="publication.authors"
         :title="publication.title"
-        :description="publication.description"
         :file_url="publication.file"
         :id="publication.id"
+        :publisher="publication.publisher"
+        :publication_date="publication.publication_date"
+        :publication_type="publication.publication_type"
     ></publication-card>
   </div>
 </template>

@@ -5,7 +5,11 @@
     <h2>{{ title }}</h2>
     <h2 class="mt-2">ABSTRACT</h2>
     <p>{{ abstract }}</p>
-    <p>{{  publication_date }}</p>
+    <ul class="d-flex justify-content-start publication_list">
+      <li class="ms-0">{{ publisher }}</li>
+      <li class="ms-0">{{ publication_date }}</li>
+      <li class="ms-0">{{ publication_type }}</li>
+    </ul>
   </div>
 
 </template>
@@ -23,6 +27,8 @@ export default {
       authors: '',
       abstract: [],
       publication_date: '',
+      publisher: '',
+      publication_type: '',
     }
   },
   computed: {
@@ -38,6 +44,8 @@ export default {
             this.abstract = response.data['data']['abstract'];
             this.authors = [...response.data.data.authors];
             this.publication_date = response.data['data']['publication_date'];
+            this.publisher = response.data['data']['publisher'];
+            this.publication_type = response.data['data']['publication_type'];
 
           })
           .catch(error => {
@@ -52,5 +60,17 @@ export default {
 </script>
 
 <style scoped>
+.publication_list li {
+  position: relative;
+}
+.publication_list li::after {
+  content: "•";
+  position: absolute;
+  right: -20px;
+  color: black;
+}
 
+.publication_list li:last-child::after {
+  content: "";
+}
 </style>
