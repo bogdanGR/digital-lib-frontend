@@ -36,7 +36,7 @@
             Duration
           </div>
           <div class="col-md-10">
-            {{ duration }}
+            {{ year_start }} - {{ year_end}} ({{ duration }} months)
           </div>
       </div>
     </div>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  props: ['title', 'category_title', 'framework', 'fullProjectName', 'participants', 'budget', 'duration', 'id'],
+  props: ['title', 'category_title', 'framework', 'fullProjectName', 'participants', 'budget', 'duration', 'year_start', 'year_end', 'id'],
   computed: {
     viewProjectUrl() {
       return {
