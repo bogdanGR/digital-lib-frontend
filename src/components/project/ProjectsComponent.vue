@@ -12,13 +12,13 @@
             Project Name
           </div>
           <div class="col-md-10">
-            {{ title }}
+            <router-link class="p-0" :to="viewProjectUrl">{{ title }}</router-link>
           </div>
           <div class="col-md-2">
             Full Project Name
           </div>
           <div class="col-md-10">
-            {{ fullProjectName }}
+            <router-link class="p-0" :to="viewProjectUrl">{{ fullProjectName }}</router-link>
           </div>
         <div class="col-md-2">
           Participants
@@ -45,9 +45,19 @@
 
 <script>
 export default {
-  props: ['title', 'category_title', 'framework', 'fullProjectName', 'participants', 'budget', 'duration']
+  props: ['title', 'category_title', 'framework', 'fullProjectName', 'participants', 'budget', 'duration', 'id'],
+  computed: {
+    viewProjectUrl() {
+      return {
+        name: 'project-view',
+        params: { id: this.id }
+      }
+    },
+  }
 }
 </script>
 <style scoped>
-
+a {
+  color: black;
+}
 </style>

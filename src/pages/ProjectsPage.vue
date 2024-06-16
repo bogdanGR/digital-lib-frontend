@@ -5,6 +5,7 @@
     <projects-component
         v-for="project in projects_eu_active"
         :key="project.id"
+        :id="project.id"
         :framework="project.framework"
         :title="project.project_name"
         :fullProjectName="project.full_title"
@@ -19,6 +20,7 @@
     <projects-component
         v-for="project in projects_eu_completed"
         :key="project.id"
+        :id="project.id"
         :framework="project.framework"
         :title="project.project_name"
         :fullProjectName="project.full_title"
@@ -34,6 +36,7 @@
     <projects-component
         v-for="project in projects_gr_active"
         :key="project.id"
+        :id="project.id"
         :framework="project.framework"
         :title="project.project_name"
         :fullProjectName="project.full_title"
@@ -49,6 +52,7 @@
     <projects-component
         v-for="project in projects_gr_completed"
         :key="project.id"
+        :id="project.id"
         :framework="project.framework"
         :title="project.project_name"
         :fullProjectName="project.full_title"
@@ -63,7 +67,7 @@
 </template>
 
 <script>
-import ProjectsComponent from "@/components/ProjectsComponent.vue";
+import ProjectsComponent from "@/components/project/ProjectsComponent.vue";
 import axios from "axios";
 export default {
   components: {
