@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-start mt-2">Publications</h1>
-    <publication-filters></publication-filters>
+    <publication-filters @search="applyFilters"></publication-filters>
     <publication-card
         :key="publication.id"
         v-for="publication in publications"
@@ -27,17 +27,22 @@ export default {
     return {
       apiBaseUrl: process.env.VUE_APP_API_BASE_URL,
       publications: [],
+      filters: {}
     }
   },
   methods: {
     fetchData() {
-      axios.get(`${this.apiBaseUrl}/publications`)
+      axios.get(`${this.apiBaseUrl}/publications`, { params: this.filters })
           .then(response => {
             this.publications = response.data['data'];
           })
           .catch(error => {
             console.error(error);
           });
+    },
+    applyFilters(filters) {
+      this.filters = filters;
+      this.fetchData();
     }
   },
   mounted() {
