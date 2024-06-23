@@ -8,7 +8,7 @@
             @click="selectTab(tab)"
             href="#"
         >
-          {{ tab }}
+          {{ $t(tab) }}
         </a>
       </li>
     </ul>

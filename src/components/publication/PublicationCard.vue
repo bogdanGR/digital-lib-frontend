@@ -12,7 +12,7 @@
       </ul>
     </div>
     <div class="d-flex mb-3">
-      <router-link class="btn btn-primary mx-2" :to="abstractLink">Abstract</router-link>
+      <router-link class="btn btn-primary mx-2" :to="abstractLink">{{ $t('Abstract')}}</router-link>
       <a :href="file_url" target="_blank" class="btn btn-secondary">PDF</a>
     </div>
   </div>

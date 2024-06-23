@@ -3,40 +3,40 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-2">
-          Framework
+          {{ $t('Framework')}}
         </div>
         <div class="col-md-10">
           {{ framework }}
         </div>
           <div class="col-md-2">
-            Project Name
+            {{ $t('Project Name')}}
           </div>
           <div class="col-md-10">
             <router-link class="p-0" :to="viewProjectUrl">{{ title }}</router-link>
           </div>
           <div class="col-md-2">
-            Full Project Name
+            {{ $t('Full Project Name')}}
           </div>
           <div class="col-md-10">
             <router-link class="p-0" :to="viewProjectUrl">{{ fullProjectName }}</router-link>
           </div>
         <div class="col-md-2">
-          Participants
+          {{ $t('Participants')}}
         </div>
         <div class="col-md-10">
           {{ participants }}
         </div>
           <div class="col-md-2">
-            Budget
+            {{ $t('Budget')}}
           </div>
           <div class="col-md-10">
             {{ budget }}
           </div>
           <div class="col-md-2">
-            Duration
+            {{ $t('Duration')}}
           </div>
           <div class="col-md-10">
-            {{ year_start }} - {{ year_end}} ({{ duration }} months)
+            {{ year_start }} - {{ year_end}} ({{ duration }} {{ $t('months')}})
           </div>
       </div>
     </div>

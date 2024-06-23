@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h1 class="mt-2 text-start">Projects</h1>
     <tabs-component
+        class="mt-5"
         :tabs="['All', 'EU In Progress', 'EU Completed', 'Greek In Progress', 'Greek Completed']"
         v-model:activeTab="activeTab"
     ></tabs-component>
 
     <div v-if="activeTab === 'All' || activeTab === 'EU In Progress'">
-      <h2 class="text-start">European In Progress</h2>
+      <h2 class="text-start">{{ $t('European In Progress')}}</h2>
       <projects-component
           v-for="project in projects_eu_active"
           :key="project.id"
@@ -27,7 +27,7 @@
     </div>
 
     <div v-if="activeTab === 'All' || activeTab === 'EU Completed'">
-      <h2 class="text-start">European Completed</h2>
+      <h2 class="text-start">{{ $t('European Completed')}}</h2>
       <projects-component
           v-for="project in projects_eu_completed"
           :key="project.id"
@@ -47,7 +47,7 @@
     </div>
 
     <div v-if="activeTab === 'All' || activeTab === 'Greek In Progress'">
-      <h2 class="text-start">Greek In Progress</h2>
+      <h2 class="text-start">{{ $t('Greek In Progress') }}</h2>
       <projects-component
           v-for="project in projects_gr_active"
           :key="project.id"
@@ -67,7 +67,7 @@
     </div>
 
     <div v-if="activeTab === 'All' || activeTab === 'Greek Completed'">
-      <h2 class="text-start">Greek Completed</h2>
+      <h2 class="text-start">{{ $t('Greek Completed')}}</h2>
       <projects-component
           v-for="project in projects_gr_completed"
           :key="project.id"

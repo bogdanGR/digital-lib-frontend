@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-start mt-2">Publications</h1>
-    <publication-filters @search="applyFilters"></publication-filters>
+    <publication-filters @search="applyFilters" class="mt-5"></publication-filters>
     <publication-card
         :key="publication.id"
         v-for="publication in publications"
