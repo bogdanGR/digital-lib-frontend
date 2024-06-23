@@ -1,7 +1,5 @@
 <template>
-  <h1>People</h1>
-
-  <div class="container">
+  <div class="container mt-5">
     <div class="row mb-5">
       <div class="col-md-6">
         <h3 class="text-start">Teachers</h3>

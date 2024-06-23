@@ -1,7 +1,5 @@
 <template class="text-start">
-  <div class="container text-start">
-    <h1 class="mt-2">Courses</h1>
-
+  <div class="container text-start mt-5 mb-5">
     <div class="card mb-3">
       <h2 class="card-title mt-2" style="margin-left: 20px">{{ $t("Undergraduate") }}</h2>
       <div class="text-start d-flex flex-column mb-2 pt-0 mt-0 card-body">
