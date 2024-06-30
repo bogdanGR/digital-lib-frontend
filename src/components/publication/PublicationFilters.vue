@@ -36,7 +36,7 @@
           <label for="type" class="form-label">{{ $t('Type') }}</label>
           <select class="form-select" aria-label="Default select example" v-model="filters.type">
             <option selected>{{ $t('All') }}</option>
-            <option v-for="publicationType in publicationTypes" :key="publicationType">
+            <option :value="publicationType" v-for="publicationType in publicationTypes" :key="publicationType">
               {{ $t(publicationType) }}
             </option>
           </select>

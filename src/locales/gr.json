@@ -40,5 +40,15 @@
     "Book": "Βιβλίο",
     "Conference": "Συνέδριο",
     "Diploma Thesis": "Διπλωματική Εργασία",
-    "Phd Thesis": "Διδακτορική Διατριβή"
+    "Phd Thesis": "Διδακτορική Διατριβή",
+    "Undergraduate": "Προπτυχιακού",
+    "Graduate": "Μεταπτυχιακού",
+    "Teachers": "Διδακτικό Ερευνητικό Προσωπικό (ΔΕΠ)",
+    "Authors": "Συγγραφείς",
+    "Laboratory Teaching Staff": "Εργαστηριακό Διδακτικό Προσωπικό (ΕΔΙΠ)",
+    "Students": "Φοιτητές",
+    "Services": "Φοιτητολόγιο",
+    "Services for students" : "Υπηρεσίες για τους φοιτητές",
+    "Eudoxus" : "Εύδοξος",
+    "Announcements": "Ανακοινώσεις"
 }
