@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header-wrapper">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
         <a
@@ -114,7 +114,7 @@ nav {
   height: 100%;
 }
 
-ul {
+.header-wrapper ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -124,7 +124,7 @@ ul {
   align-items: center;
 }
 
-li {
+.header-wrapper li {
   margin: 0 2rem;
 }
 
