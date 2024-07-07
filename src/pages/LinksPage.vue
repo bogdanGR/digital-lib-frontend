@@ -38,6 +38,9 @@ a:hover {
 ul > li {
   min-width: 250px;
 }
+ul {
+  padding-left: 0;
+}
 </style>
 <script setup lang="ts">
 </script>

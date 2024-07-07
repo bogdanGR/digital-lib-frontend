@@ -46,8 +46,20 @@ export default {
 </script>
 
 <style scoped>
+
+.publication_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .publication_list li {
   position: relative;
+  margin: 0 2rem;
 }
 .publication_list li::after {
   content: "•";

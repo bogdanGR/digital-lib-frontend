@@ -25,4 +25,16 @@ export default {
 .course-list .course-link:active {
   color: #1a037e;
 }
+.course-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.course-list li {
+  margin: 0 2rem;
+}
 </style>
