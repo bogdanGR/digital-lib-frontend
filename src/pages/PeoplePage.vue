@@ -6,18 +6,14 @@
         <people-list :people="teachers"></people-list>
       </div>
       <div class="col-md-6">
-        <h3 class="text-start">{{ $t('Authors') }}</h3>
-        <people-list :people="authors"></people-list>
+        <h3 class="text-start">{{ $t('Students') }}</h3>
+        <people-list :people="students"></people-list>
       </div>
     </div>
     <div class="row mb-5">
       <div class="col-md-6">
         <h3 class="text-start">{{ $t('Laboratory Teaching Staff') }}</h3>
         <people-list :people="labTeachingStaff"></people-list>
-      </div>
-      <div class="col-md-6">
-        <h3 class="text-start">{{ $t('Students') }}</h3>
-        <people-list :people="students"></people-list>
       </div>
     </div>
   </div>
