@@ -9,6 +9,7 @@
       <li class="ms-0">{{ publisher }}</li>
       <li class="ms-0">{{ publication_date }}</li>
       <li class="ms-0">{{ publication_type }}</li>
+      <li class="ms-0"> <a :href="file_url" target="_blank" class="btn btn-secondary">PDF</a></li>
     </ul>
   </div>
 
@@ -46,6 +47,7 @@ export default {
             this.publication_date = response.data['data']['publication_date'];
             this.publisher = response.data['data']['publisher'];
             this.publication_type = response.data['data']['publication_type'];
+            this.file_url = response.data['data']['file'];
 
           })
           .catch(error => {
